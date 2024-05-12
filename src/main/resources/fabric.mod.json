@@ -3,13 +3,14 @@
 	"id": "experimental-elytra-nerf",
 	"version": "${version}",
 	"name": "Experimental Elytra Nerf",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Brings back the elytra changes from 1.18 experimental snapshot 7",
 	"authors": [
-		"Me!"
+		"sonop"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/exp7-elytra-nerf",
+		"sources": "https://github.com/FabricMC/fabric-example-mod",
+		"issues": "https://github.com/sonopsa/experimental-elytra-nerf/issues"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/experimental-elytra-nerf/icon.png",
