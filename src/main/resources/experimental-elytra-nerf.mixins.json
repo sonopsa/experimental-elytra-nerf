@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "io.github.sonopsa.explytranerf.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FireworkRocketEntityMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
