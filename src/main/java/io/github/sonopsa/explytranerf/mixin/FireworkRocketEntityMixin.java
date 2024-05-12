@@ -1,6 +1,7 @@
 package io.github.sonopsa.explytranerf.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import io.github.sonopsa.explytranerf.ExperimentalElytraNerf;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
@@ -18,6 +19,8 @@ public class FireworkRocketEntityMixin {
 
     @ModifyExpressionValue(method = "tick", at = @At(value = "CONSTANT", args = "doubleValue=1.5"))
     private double slowerFireworks(double original){
+        // TODO: Make this configurable
+        // but not though gamerules as they normally aren't told to the client
         return original * 0.8333;
     }
 
@@ -27,11 +30,9 @@ public class FireworkRocketEntityMixin {
             if (shooter.isFallFlying()) {
                 ItemStack itemStack = shooter.getEquippedStack(EquipmentSlot.CHEST);
                 if (itemStack.isOf(Items.ELYTRA) && ElytraItem.isUsable(itemStack)){
-                    int damageNum = Math.min(itemStack.getMaxDamage()-1 - itemStack.getDamage(), 3);
+                    int damageNum = Math.min(itemStack.getMaxDamage()-1 - itemStack.getDamage(), shooter.getWorld().getGameRules().getInt(ExperimentalElytraNerf.ELYTRA_FIREWORK_DURABILITY));
 
-                    itemStack.damage(damageNum, shooter, (player) -> {
-                        player.sendEquipmentBreakStatus(EquipmentSlot.CHEST);
-                    });
+                    itemStack.damage(damageNum, shooter, (player) -> player.sendEquipmentBreakStatus(EquipmentSlot.CHEST));
                 }
             }
         }
