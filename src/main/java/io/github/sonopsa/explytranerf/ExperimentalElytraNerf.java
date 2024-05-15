@@ -9,11 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ExperimentalElytraNerf implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("experimental-elytra-nerf");
+//	public static final Logger LOGGER = LoggerFactory.getLogger("experimental-elytra-nerf");
 	public static final GameRules.Key<GameRules.IntRule> ELYTRA_FIREWORK_DURABILITY = GameRuleRegistry.
 			register("elytraFireworkDurability", GameRules.Category.PLAYER, GameRuleFactory.createIntRule(3, 0));
-	public static final GameRules.Key<GameRules.IntRule> ELYTRA_FLIGHT_DURABILITY_RATE = GameRuleRegistry.
-			register("elytraFlightDurabilityRate", GameRules.Category.PLAYER, GameRuleFactory.createIntRule(0, 0));
+	public static final GameRules.Key<GameRules.IntRule> ELYTRA_GLIDE_DURABILITY_RATE = GameRuleRegistry.
+			register("elytraGlideDurabilityRate", GameRules.Category.PLAYER, GameRuleFactory.createIntRule(0, 0));
 
 	@Override
 	public void onInitialize() {
